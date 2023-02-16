@@ -1,7 +1,4 @@
-var rect ={
-premeter:(x,y)=>(2*(x+y)),
-area:(x,y)=>(x*y)
-};
+var rect =require('./rectangular');
 
 function solveRect(l,b)
 {
@@ -13,7 +10,7 @@ function solveRect(l,b)
     else
     {
         console.log("the area of the rectangular is " +rect.area(l,b));
-        console.log("the perimeter  of the rectangular is " +rect.premeter(l,b));
+        console.log("the perimeter  of the rectangular is " +rect.perimeter(l,b));
 
     }
 }
