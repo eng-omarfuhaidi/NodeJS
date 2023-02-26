@@ -6,32 +6,35 @@ const url ='mongodb://localhost:27017/';
 
 const dbname='data';
 
-MongoClient.connect(url,(err,client)=>{
-
-    assert.equal(err,null);
+MongoClient.connect(url).then((client)=>{
 
     console.log('Connected Correctly to Server');
 
     const db =client.db(dbname);
 
-    dboper.insertDocument(db,{name:"Vadonut",desciption:'Test'},'dishes',(result)=>{
+    dboper.insertDocument(db,{name:"Vadonut",desciption:"Test"},"dishes")
+    .then((result)=>{
         console.log('Insert Document :\n',result.ops);
-        dboper.findDocuments(db,'dishes',(docs)=>{
+      return  dboper.findDocuments(db,'dishes');
+    })
+        .then((docs)=>{
             console.log('Found Document :\n' , docs);
 
-            dboper.updateDocument(db,{name:'Vadonut'},{desciption:'Update Test'},'dishes',(result)=>{
+            return dboper.updateDocument(db,{name:'Vadonut'},{desciption:'Update Test'},'dishes')
+        })
+            .then((result)=>{
                 console.log('Updated Document ',result.result);
 
-                dboper.findDocuments(db,'dishes',(docs)=>{
-                    console.log('Found Document :\n' , docs);
-                db.dropCollection('dishes',(result)=>{
+                return dboper.findDocuments(db,'dishes');
+            })
+                .then((docs)=>{
+                console.log('Found Document :\n' , docs);
+                return db.dropCollection('dishes');
+            })
+                .then((result)=>{
                     console.log('Drop collection : ' , result);
                     client.close();
-                });
-                });
-
-            });
-        });
-    });
-  
-});
+                })
+                .catch((err)=> console.log(err));
+})
+.catch((err)=> console.log(err));
