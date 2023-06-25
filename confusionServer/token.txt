@@ -2,3 +2,49 @@
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDk1YWU4N2U4Njg0YzRiYjg4MDI1NGMiLCJpYXQiOjE2ODc1MzExOTYsImV4cCI6MTY4NzUzNDc5Nn0.qz-uIaeOnSh64KBkViXaoZ0N9pEND9q2eQaJWoffetc
 
 6495afdde8684c4bb8802559
+
+
+
+{
+    "featured": true,
+  "name": "Uthappizza2",
+  "image": "images/uthappizza.png",
+  "category": "mains",
+  "label": "Hot",
+  "price": 499,
+  "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.",
+  "comments": [ ]
+}
+
+
+
+ {
+        "_id": "6495b163e8684c4bb880255f",
+        "rating": 5,
+        "comment": "this is a comment",
+        "author": {
+            "firstname": "Omar",
+            "lastname": "Omar",
+            "admin": false,
+            "_id": "6495ae87e8684c4bb880254c",
+            "username": "omar",
+            "__v": 0
+        },
+        "createdAt": "2023-06-23T14:51:15.343Z",
+        "updatedAt": "2023-06-23T14:51:15.343Z"
+    }
+
+     {
+        "_id": "6495b163e8684c4bb880255f",
+        "rating": 5,
+        "comment": "this is a comment",
+        "author": {
+            "firstname": "Omar",
+            "lastname": "Omar",
+            "admin": false,
+            "_id": "6495ae87e8684c4bb880254c",
+            "username": "omar"
+
+        }
+      
+    }
